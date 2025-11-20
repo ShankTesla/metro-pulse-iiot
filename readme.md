@@ -29,14 +29,15 @@ The system follows a microservices-based Event-Driven Architecture:
 * **ML Frameworks:** XGBoost, Scikit-Learn
 * **ML Ops:** MLflow, ONNX / ONNX Runtime
 * **Data Source:** UCI MetroPT-3 Dataset
-
+* **Dashboard:** Streamlit (Real-time visualization)
+* **CI/CD:** GitHub Actions (Automated Testing)
 ---
 
 ### 🚀 Key Results & Benchmarks
 | Metric | Standard XGBoost | ONNX Runtime (Quantized) | Improvement |
 | :--- | :--- | :--- | :--- |
-| **Inference Latency** | ~0.15ms | ~0.04ms | **~3.7x Faster** |
-| **Model Size** | 450 KB | 120 KB | **73% Smaller** |
+| **Inference Latency** | ~0.96ms | ~0.03ms | **~32x Faster** |
+| **Model Size** | 228 KB | 183 KB | **19.7% Smaller** |
 | **Accuracy (F1)** | 0.99 | 0.99 | **Lossless** |
 
 *Note: Benchmarks run on local CPU environment. ONNX optimization allows this model to be deployed on low-power edge devices (e.g., Raspberry Pi / Train ECU).*
@@ -54,3 +55,8 @@ The system follows a microservices-based Event-Driven Architecture:
 git clone [https://github.com/yourusername/metro-pulse.git](https://github.com/yourusername/metro-pulse.git)
 cd metro-pulse
 pip install -r requirements.txt
+
+**3. Start the Interactive Dashboard**
+Instead of the terminal consumer, visualize the data drift in real-time:
+```bash
+streamlit run src/dashboard.py
